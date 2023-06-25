@@ -4,6 +4,19 @@
 #
 name: Deploy Nuxt site to Pages
 
+env:
+  BASE_URL: https://simpleweb3.ch
+  NOTION_TABLE_ID: ${{secrets.NOTION_TABLE_ID}}
+  NOTION_ABOUT_PAGE_ID: ${{secrets.NOTION_ABOUT_PAGE_ID}}
+  REPO_GITHUB_USERNAME: tejareddy8888
+  DEV_LOGO: SimpleWeb3
+  DEV_NAME: Saiteja Pottanigari
+  DEV_DESCRIPTION: a passionate Python developer from Morocco who loves to build and deliver quality products.
+  DEV_ROLE: Blockchain Engineer
+  DEV_GITHUB_LINK: https://github.com/tejareddy8888
+  DEV_TWITTER_LINK: https://twitter.com/0xteja
+  DEV_LINKEDIN_LINK: https://www.linkedin.com/in/tejareddy8888/
+  
 on:
   # Runs on pushes targeting the default branch
   push:
@@ -47,18 +60,7 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
-        env:
-          BASE_URL: https://simpleweb3.ch
-          NOTION_TABLE_ID: ${{secrets.NOTION_TABLE_ID}}
-          NOTION_ABOUT_PAGE_ID: ${{secrets.NOTION_ABOUT_PAGE_ID}}
-          REPO_GITHUB_USERNAME: tejareddy8888
-          DEV_LOGO: SimpleWeb3
-          DEV_NAME: Saiteja Pottanigari
-          DEV_DESCRIPTION: a passionate Python developer from Morocco who loves to build and deliver quality products.
-          DEV_ROLE: Blockchain Engineer
-          DEV_GITHUB_LINK: https://github.com/tejareddy8888
-          DEV_TWITTER_LINK: https://twitter.com/0xteja
-          DEV_LINKEDIN_LINK: https://www.linkedin.com/in/tejareddy8888/
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
