@@ -79,7 +79,7 @@ export default {
     classSuffix: '',
     preference: 'system',
     fallback: 'dark',
-    value: 'dark'
+    value: 'dark',
   },
 
   optimizedImages: {
@@ -106,7 +106,7 @@ export default {
 
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL,
-    githubUsername: process.env.GITHUB_USERNAME,
+    githubUsername: process.env.REPO_GITHUB_USERNAME,
     notionTableId: process.env.NOTION_TABLE_ID,
     notionAboutPageId: process.env.NOTION_ABOUT_PAGE_ID,
     devName: process.env.DEV_NAME,
