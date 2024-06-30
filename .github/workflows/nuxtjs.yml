@@ -30,6 +30,7 @@ concurrency:
 jobs:
   # Build job
   build:
+    environment: github_pages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -41,6 +42,9 @@ jobs:
       # Pick your own package manager and build script
       - run: npm install
       - run: npx nuxt build --preset github_pages
+        env:
+          BASE_URL: https://simpleweb3.ch
+          NUXT_GITHUB_TOKEN: ${{ secrets.NUXT_GITHUB_TOKEN }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
@@ -59,6 +63,6 @@ jobs:
         uses: actions/deploy-pages@v2
         env:
           BASE_URL: https://simpleweb3.ch
-          E_GITHUB_TOKEN: ${{ secrets.E_GITHUB_TOKEN }}
+          NUXT_GITHUB_TOKEN: ${{ secrets.NUXT_GITHUB_TOKEN }}
 
 
