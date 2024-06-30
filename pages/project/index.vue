@@ -25,7 +25,9 @@ const query = gql`
 }
 `
 const variables = { limit: 4 }
-const { data } = await useAsyncQuery(query, variables)
+const { data,error } = await useAsyncQuery(query, variables)
+console.log(data)
+console.log(error)
 </script>
 
 
