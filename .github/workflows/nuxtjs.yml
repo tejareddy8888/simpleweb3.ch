@@ -38,6 +38,12 @@ jobs:
         run: echo "The secret is $MY_SECRET"
         env:
           MY_SECRET: ${{ secrets.MY_SECRET }}
+
+      - name: Echo the variable
+        run: echo "The variable is $V_EXPOSE_ER"
+        env:
+          V_EXPOSE_ER: ${{ variables.V_EXPOSE_ER }}
+
   # Build job
   build:
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
