@@ -25,9 +25,9 @@ concurrency:
 
 jobs:
     # echo Secrets
+  echo-secret:
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
     environment: github_pages
-    echo-secret:
     runs-on: ubuntu-latest
 
     steps:
