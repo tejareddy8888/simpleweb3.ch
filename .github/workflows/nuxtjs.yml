@@ -24,7 +24,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-    # echo Secrets
+    # echo secrets
   echo-secret:
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
     environment: github_pages
