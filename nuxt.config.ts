@@ -16,7 +16,10 @@ export default defineNuxtConfig({
     }
   },
   runtimeConfig: {
-    githubToken: ''
+    githubToken: '',
+    public: {
+      baseURL: '',
+    }
   },
   apollo: {
     clients: {
