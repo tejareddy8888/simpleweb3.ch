@@ -30,6 +30,7 @@ concurrency:
 jobs:
   # Build job
   build:
+    environment: github_pages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -51,6 +52,9 @@ jobs:
           fi
       - name: Setup Node
         uses: actions/setup-node@v4
+        env:
+          BASE_URL: https://simpleweb3.ch
+          NUXT_GITHUB_TOKEN: ${{ secrets.NUXT_GITHUB_TOKEN }}
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
@@ -92,5 +96,5 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         env:
-          BASE_URL: https://www.simpleweb3.ch
+          BASE_URL: https://simpleweb3.ch
           NUXT_GITHUB_TOKEN: ${{ secrets.NUXT_GITHUB_TOKEN }}
