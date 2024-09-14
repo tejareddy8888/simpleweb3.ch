@@ -19,7 +19,8 @@ export default defineNuxtConfig({
     githubToken: '',
     public: {
       baseURL: '',
-    }
+    },
+    testVar: 'uninitialized'
   },
   apollo: {
     clients: {
