@@ -42,7 +42,7 @@ jobs:
       - name: Echo the variable
         run: echo "The variable is $V_EXPOSE_ER"
         env:
-          V_EXPOSE_ER: ${{ variables.V_EXPOSE_ER }}
+          V_EXPOSE_ER: ${{ vars.V_EXPOSE_ER }}
 
   # Build job
   build:
