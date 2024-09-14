@@ -37,11 +37,10 @@ jobs:
         env:
           NUXT_PUBLIC_BASE_URL: https://simpleweb3.ch
           NUXT_GITHUB_TOKEN: ${{ secrets.NUXT_GITHUB_TOKEN }}
-      - run: npm install
-      - run: npx nuxt build --preset github_pages
         with:
           node-version: "20"
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
+      - run: npm install
+      - run: npx nuxt build --preset github_pages
       - name: Setup Pages
         env:
           NUXT_PUBLIC_BASE_URL: https://simpleweb3.ch
