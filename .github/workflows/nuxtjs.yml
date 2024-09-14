@@ -24,6 +24,20 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+    # echo Secrets
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
+    environment: github_pages
+    echo-secret:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Echo the secret
+        run: echo "The secret is $MY_SECRET"
+        env:
+          MY_SECRET: ${{ secrets.MY_SECRET }}
   # Build job
   build:
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
