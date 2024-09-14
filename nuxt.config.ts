@@ -16,7 +16,11 @@ export default defineNuxtConfig({
     }
   },
   runtimeConfig: {
-    githubToken: ''
+    githubToken: '',
+    public: {
+      baseURL: '',
+    },
+    testVar: 'uninitialized'
   },
   apollo: {
     clients: {

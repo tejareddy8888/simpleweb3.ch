@@ -1,6 +1,8 @@
 export default defineNuxtPlugin((nuxtApp) => {
     // access token from env 
-    const { githubToken } = useRuntimeConfig();
+    const { githubToken, testVar } = useRuntimeConfig();
+
+    console.log(testVar);  // access testVar from nuxt.config.js
 
     console.log(!!githubToken ? 'token is found' : 'token is undefined');
 
