@@ -1,5 +1,8 @@
 <script setup>
 
+const emailAddress = 'saitejapottanigari@gmail.com';
+const showCopiedMessage = ref(false);
+
 const images = ref([
   '/private/suit_edit_white.png',
   // Add more image paths as needed
@@ -23,8 +26,24 @@ const handleDownloadResume = () => {
   window.open('/resume_feb2025.pdf', '_blank');
 };
 
+
+
 const sendEmail = () => {
-  window.location.href = 'mailto:saitejapottanigari@gmail.com';
+  const mailtoLink = `mailto:${emailAddress}`;
+  const newWindow = window.open(mailtoLink, '_blank');
+
+  if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+    // If opening the email client fails, copy the email to clipboard
+    navigator.clipboard.writeText(emailAddress).then(() => {
+      showCopiedMessage.value = true;
+      setTimeout(() => {
+        showCopiedMessage.value = false;
+      }, 5000); // Hide the message after 5 seconds
+    }).catch(err => {
+      console.error('Failed to copy email: ', err);
+      alert('Could not open email client or copy email. Please manually copy: ' + emailAddress);
+    });
+  }
 };
 
 const openLinkedIn = () => {
@@ -73,6 +92,9 @@ const openLinkedIn = () => {
               Email Me
             </div>
           </CustomButton>
+          <transition name="fade">
+            <p v-if="showCopiedMessage" class="text-green-500 mt-2">Email copied to clipboard!</p>
+          </transition>
           <CustomButton @click="openLinkedIn" variant="secondary" class="w-full max-w-xs">
             <div class="flex items-center justify-center">
               <Icon name="mdi:linkedin" class="mr-2" />
