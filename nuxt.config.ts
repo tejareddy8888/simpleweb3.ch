@@ -19,12 +19,6 @@ export default defineNuxtConfig({
     }
   },
 
-  nitro: {
-    prerender: {
-      routes: ['/resume.pdf']
-    }
-  },
-
   runtimeConfig: {
     githubToken: '',
     public: {
