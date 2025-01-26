@@ -1,5 +1,9 @@
 <script setup>
-import ImageSlideshow from '~/components/ImageSlideshow.vue';
+
+const images = ref([
+  '/private/suit_edit_white.png',
+  // Add more image paths as needed
+]);
 
 const { data: posts } = await useAsyncData(
   `latest-posts`,
@@ -48,7 +52,7 @@ const openLinkedIn = () => {
         </div>
       </div>
       <div class="mt-8 md:mt-0 md:w-1/3 lg:w-1/4 flex justify-center md:justify-end">
-        <ImageSlideshow class="w-64 h-180 sm:w-72 sm:h-180 lg:w-80 lg:h-180" />
+        <ImageSlideShow class="w-64 h-180 sm:w-72 sm:h-180 lg:w-80 lg:h-180" :images="images" :interval="5000" />
       </div>
     </section>
 
@@ -69,11 +73,7 @@ const openLinkedIn = () => {
               Email Me
             </div>
           </CustomButton>
-          <CustomButton 
-            @click="openLinkedIn" 
-            variant="secondary"
-            class="w-full max-w-xs"
-          >
+          <CustomButton @click="openLinkedIn" variant="secondary" class="w-full max-w-xs">
             <div class="flex items-center justify-center">
               <Icon name="mdi:linkedin" class="mr-2" />
               Message on LinkedIn
