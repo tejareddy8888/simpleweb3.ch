@@ -9,7 +9,15 @@ module.exports = {
     "./error.vue",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      'playfair': ['Playfair Display'],
+      'open-sans': ['Open Sans'],
+    },
+    extend: {
+      colors: {
+        customGreen: '#2B5E0A',
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),

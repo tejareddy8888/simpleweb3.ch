@@ -3,7 +3,7 @@ title: Hello Blogging
 description: Describe the blogging in my own word
 date: 2024-0-23
 navigation: true
-cover: coffee-pot.jpg
+cover: perfecto.png
 tags:
     - blog
     - Blockchain

@@ -1,9 +1,9 @@
 ---
-title: Finance
-description: Learn Finance with me
-date: 2024-06-23
+title: Pectra Upgrade
+description: Deep Dive into Pectra EIPs
+date: 2025-01-26
 navigation: true
-cover: /finance/car.jpg
+cover: /pectra/title.jpg
 tags:
     - blog
     - Blockchain
