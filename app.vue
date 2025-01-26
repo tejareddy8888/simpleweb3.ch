@@ -1,7 +1,9 @@
 <template>
   <div class="flex flex-col min-h-screen">
-    <SiteHeader />
-    <main class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 grow items-start w-full pt-10 pb-10 sm:pb-16 lg:pb-24 sm:pt-32 lg:pt-48">
+    <div class="fixed top-0 left-0 right-0 z-50">
+      <SiteHeader />
+    </div>
+    <main class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 grow items-start w-full pt-24 sm:pt-40 lg:pt-48 pb-10 sm:pb-16 lg:pb-24">
       <NuxtPage />
     </main>
     <SiteFooter />
