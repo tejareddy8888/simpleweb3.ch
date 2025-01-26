@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps(['projects'])
+const props = defineProps(['works'])
 </script>
 
 <template>

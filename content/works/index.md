@@ -4,8 +4,7 @@ description: Describe the project
 date: 2024-0-23
 navigation: true
 tags:
-    - project
-
+    - works
 ---
 
 # Hello Project World
