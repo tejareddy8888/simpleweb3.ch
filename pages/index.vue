@@ -1,5 +1,6 @@
 <script setup>
 
+
 const emailAddress = 'saitejapottanigari@gmail.com';
 const showCopiedMessage = ref(false);
 
@@ -23,8 +24,9 @@ const handleContact = () => {
 };
 
 const handleDownloadResume = () => {
-  window.open('/resume_feb2025.pdf', '_blank');
-};
+  const resumePath = 'resume.pdf'
+  window.open(resumePath, '_blank')
+}
 
 
 
