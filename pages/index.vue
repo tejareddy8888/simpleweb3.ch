@@ -28,7 +28,17 @@ const handleDownloadResume = () => {
   window.open(resumePath, '_blank')
 }
 
-
+const copyEmail = () => {
+  navigator.clipboard.writeText(emailAddress).then(() => {
+    showCopiedMessage.value = true;
+    setTimeout(() => {
+      showCopiedMessage.value = false;
+    }, 5000); // Hide the message after 5 seconds
+  }).catch(err => {
+    console.error('Failed to copy email: ', err);
+    alert('Could not copy email. Please manually copy: ' + emailAddress);
+  });
+};
 
 const sendEmail = () => {
   const mailtoLink = `mailto:${emailAddress}`;
@@ -88,12 +98,20 @@ const openLinkedIn = () => {
       <div class="bg-white dark:bg-gray-500 shadow-md rounded-lg p-6 mx-auto">
         <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Get In Touch</h3>
         <div class="flex flex-col items-center justify-center space-y-4">
-          <CustomButton @click="sendEmail" class="w-full max-w-xs">
+          <div class="flex w-full max-w-xs space-x-2">
+          <CustomButton @click="sendEmail" class="flex-1">
             <div class="flex items-center justify-center">
               <Icon name="mdi:email" class="mr-2" />
               Email Me
             </div>
           </CustomButton>
+          <CustomButton @click="copyEmail" class="flex-1">
+            <div class="flex items-center justify-center">
+              <Icon name="mdi:content-copy" class="mr-2" />
+              Copy Email
+            </div>
+          </CustomButton>
+        </div>
           <transition name="fade">
             <p v-if="showCopiedMessage" class="text-green-500 mt-2">Email copied to clipboard!</p>
           </transition>
