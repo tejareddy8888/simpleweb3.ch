@@ -1,20 +1,14 @@
 ---
-title: Hello Blogging
-description: Describe the blogging in my own word
+title: Newbie to blogging 
+description: describing my blogging style 
 date: 2024-0-23
 navigation: true
 cover: perfecto.png
 tags:
     - blog
-    - Blockchain
-
 ---
 
-# Hello Blogging World
+# SimpleWeb3 Blogging 
 
-1. First ordered list item
-2. Another item
-⋅⋅* Unordered sub-list. 
-1. Actual numbers don't matter, just that it's a number
-⋅⋅1. Ordered sub-list
-4. And another item.
+I would like to talk my views about Distributed systems, Finance concepts in general. 
+I might add some flavour of web3 to keep to my opinion to keep it simply web3.

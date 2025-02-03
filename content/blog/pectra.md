@@ -1,16 +1,16 @@
 ---
-title: Pectra Upgrade
+title: Is Pectra Upgrade of any use ?
 description: Deep Dive into Pectra EIPs
 date: 2025-01-26
 navigation: true
-cover: /pectra/title.jpg
+cover: /pectra/babypanda.webp
 tags:
     - blog
     - Blockchain
 ---
 
 
-### Article [UNDER CONSTRUCTION]
+## Article [STILL IN PROGRESS]
 # Is ETHEREUM new upgrade gonna double the ETH usage ??  
 
 
